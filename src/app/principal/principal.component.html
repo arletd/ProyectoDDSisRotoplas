@@ -1,0 +1,73 @@
+<div class="row p-auto m-auto w-100 h-100">
+    <div class="col-12 w-100 h-100" >
+        <div class="row m-3">
+
+                <div class="col">
+                    <label for="pais">País</label>
+                    <select id="pais" class="form-select" aria-label="Default select example">
+                        <option selected>Open this select menu</option>
+                        <option value="">One</option>
+                        <option value="2">Two</option>
+                        <option value="3">Three</option>
+                    </select>
+                </div>
+                <div class="col">
+                    <label for="tienda">Tienda</label>
+                    <select id="tienda" class="form-select" aria-label="Default select example">
+                        <option selected>Open this select menu</option>
+                        <option value="1">One</option>
+                        <option value="2">Two</option>
+                        <option value="3">Three</option>
+                    </select>
+                </div>
+                <div class="col">
+                    <button class="btn btn-primary w-100 mt-4" type="button" (clic)="consulta();">Consultar</button>
+                </div>
+
+        </div>
+        <div class="row m-3">
+            <div class="row">
+                <div class="col-9">
+                    <table class="table table-striped table-hover">
+                        <tr>
+                            <th>País</th>
+                            <th>Tienda</th>
+                            <th>Producto</th>
+                            <th>Descripción</th>
+                            <th>Precio</th>
+                          </tr>
+                          <tr *ngFor="let producto of productos; let id = index" (mouseover)="show=true;muestraSeleccion(id)" (mouseout)="show=false">
+                            <td>
+                                <span>{{producto.pais}}</span>
+                            </td>
+                            <td>
+                                <span>{{producto.tienda}}</span>
+                            </td>
+                            <td>
+                                <span>{{producto.nombre}}</span>
+                            </td>
+                            <td>
+                                <span>{{producto.descripcion}}</span>
+                            </td>
+                            <td>
+                                <span>{{producto.precio}}</span>
+                            </td>
+                        </tr>
+                    </table>
+                </div>
+                <div class="col-3">
+                    <div class="card" style="width: 18rem;" *ngIf="show">
+                        <img src="..." class="card-img-top" alt="...">
+                        <div class="card-body">
+                          <h5 class="card-title">{{seleccionado.</h5>
+                          <p class="card-text"></p>
+                          <p class="card-text"></p>
+                          <p class="card-text"></p>
+                          <p class="card-text"></p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
